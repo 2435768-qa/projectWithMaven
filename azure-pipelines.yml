@@ -1,6 +1,14 @@
 trigger:
 - main
 
+schedules:
+- cron: "0 12 * * 4"   # каждый четверг в 12:00 (UTC)
+  displayName: Weekly Thursday Noon Run
+  branches:
+    include:
+    - main
+  always: true  # запускается даже без новых коммитов
+
 pool:
   name: Default
 
